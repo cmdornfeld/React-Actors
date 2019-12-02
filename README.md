@@ -1,68 +1,75 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Actors
 
-## Available Scripts
+Create an application for the React Actors - a troop of impersonators and improvisors.
 
-In the project directory, you can run:
+Do not fork and clone this repo. These are just instructions. Instead, use `create-react-app` to create a new react application on your computer.
 
-### `npm start`
+## Requirements
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Your react application should have five components.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- App.js
+- Header.js
+- About.js
+- Contact.js
+- Footer.js
 
-### `npm test`
+![Base Requirements](images/base-requirements.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### App.js
 
-### `npm run build`
+The code for `App.js` is included below. No changes should be necessary to this code for the requirements or stretch goals.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```JSX
+import React, { Component } from 'react';
+import './App.css';
+import Header from '../Header/Header';
+import About from '../About/About';
+import Contact from '../Contact/Contact';
+import Footer from '../Footer/Footer';
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
+    );
+  }
+}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+export default App;
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Header.js
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Should contain an `h1` that says `React Actors`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### About.js
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Should contain an `h2` that says `About` and a paragraph describing the organization.
 
-## Learn More
+### Contact.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Should contain an `h2` that says `Contact`, a paragraph with the phone number, and a paragraph with the email.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Footer.js
 
-### Code Splitting
+Should contain a copyright © React Actors (don't worry about the symbol if you can't get it working, but you should be able to copy and paste it).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Stretch Goals
 
-### Analyzing the Bundle Size
+We need to let new people join the react actors. Watch this clip to see what we would like from the form. (This form will not actually add anything to a list, it's a proof of concept that simply alerts the result.)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- A sentence should appear below the form that says who the person is and their best impression.
+- This sentence should display only if all three fields have values. (Research conditional rendering.)
+- An alert should say thank you and then the first name
+- The form should clear after click
 
-### Making a Progressive Web App
+![Stretch Goals](images/stretch-goals.gif)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Here is a deployed version with stretch goals: https://react-actors.netlify.com/
